@@ -126,29 +126,18 @@ for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
 
     //add in the active class
+    this.classList.toggle("active");
 
     //select sibling element
-
+    let panel = this.nextElementSibling;
     //if sibling is open, close it, if closed, open it
     if (panel.style.maxHeight){
       //panel is open
 
     } else {
       //panel is closed
-
+      panel.style.maxHeight = panel.scrollHeight + "px"; //add this line
+    }
     }
   });
-}
-//add in the active class
-this.classList.toggle("active");
-//select sibling element
-let panel = this.nextElementSibling;
-//if sibling is open, close it, if closed, open it
-if (panel.style.maxHeight){
-  //panel is open open
-  panel.style.maxHeight = null; //add this line
-
-} else {
-  //panel is closed
-  panel.style.maxHeight = panel.scrollHeight + "px"; //add this line
 }
